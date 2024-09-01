@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego</title>
+    <style>
+        body {
+            margin: 0;
+            background: url('assets/sky.png') repeat;
+            background-size: auto;
+            background-position: top left;
+        }
+
+        #startScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #startScreen button {
+            padding: 20px 40px;
+            font-size: 24px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #startScreen button:hover {
+            background-color: #45a049;
+        }
+
+        #jeopardy-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none; /* Hidden by default */
+            z-index: 1000;
+        }
+
+        #jeopardy-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="startScreen">
+        <button id="playButton">Play</button>
+    </div>
+
+    <div id="jeopardy-container">
+        <iframe id="jeopardy-frame" src=""></iframe>
+    </div>
+    <script>
+         function startJeopardy() {
+            window.location.href = 'jeopardy.html'; // Asegúrate de que 'jeopardy.html' es el nombre correcto del archivo de Jeopardy
+        }
+    </script>
+    <script src="src/phaser.min.js"></script>
+    <script src="src/script.js"></script>
+</body>
+</html>

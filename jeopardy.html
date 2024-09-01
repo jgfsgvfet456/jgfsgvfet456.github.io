@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeopardy Present Simple</title>
+    <link rel="stylesheet" href="style.css"> <!-- Asegúrate de vincular tu archivo CSS -->
+</head>
+<body>
+    <h1 class="header">Jeopardy Present Simple</h1>
+    <div class="jeopardy-board">
+        <!-- Celdas del tablero de Jeopardy -->
+        <div class="purple">Purple</div>
+        <div class="orange">Orange</div>
+        <div class="green">Green</div>
+        <div class="red">Red</div>
+        <div class="blue">Blue</div>
+
+        <!-- Preguntas y respuestas actualizadas -->
+        <div class="purple-10 value" data-question="Karol G ・like ・ I" data-answer="I like Karol G" data-points="5" data-image="link_to_image">$5</div>
+        <div class="orange-10 value" data-question="You don’t like mondongo." data-answer="You don’t like mondongo" data-points="5" data-image="link_to_image">$5</div>
+        <div class="green-10 value" data-question="We get up at seven." data-answer="We get up at seven" data-points="5" data-image="link_to_image">$5</div>
+        <div class="red-10 value" data-question="Do they swim in the pool on Sundays?" data-answer="Do they swim in the pool on Sundays?" data-points="5" data-image="link_to_image">$5</div>
+        <div class="blue-10 value" data-question="to watch movies・ we・ like" data-answer="We like to watch movies" data-points="5" data-image="link_to_image">$5</div>
+
+        <!-- Continuar con las otras celdas del tablero -->
+        
+        <div class="purple-15 value" data-question="Dogs swim in the water." data-answer="Dogs swim in the water" data-points="10" data-image="link_to_image">$10</div>
+        <div class="orange-15 value" data-question="・ in Cali ・ we have・ In December ・ a lot of tourists" data-answer="In December we have a lot of tourists in Cali." data-points="10" data-image="link_to_image">$10</div>
+        <div class="green-15 value" data-question="Mr.Taki usually comes home around seven." data-answer="Mr.Taki usually comes home around seven." data-points="10" data-image="link_to_image">$10</div>
+        <div class="red-15 value" data-question="She doesn’t like to watch movies." data-answer="She doesn’t like to watch movies." data-points="10" data-image="link_to_image">$10</div>
+        <div class="blue-15 value" data-question="Dogs don’t swim in the water." data-answer="Dogs don’t swim in the water" data-points="10" data-image="link_to_image">$10</div>
+        <div class="purple-20 value" data-question="My mother has a driver’s license but she doesn’t drive a car." data-answer="My mother has a driver’s license but she doesn’t drive a car." data-points="15" data-image="link_to_image">$15</div>
+        <div class="orange-20 value" data-question="There are no pets in the classroom." data-answer="There are no pets in the classroom." data-points="15" data-image="link_to_image">$15</div>
+        <div class="green-20 value" data-question="Do you speak Chinese?" data-answer="Do you speak Chinese?" data-points="15" data-image="link_to_image">$15</div>
+        <div class="red-20 value" data-question="Does Mr.Taki usually come home around seven?" data-answer="Does Mr.Taki usually come home around seven?" data-points="15" data-image="link_to_image">$15</div>
+        <div class="blue-20 value" data-question="He speaks French." data-answer="He speaks French." data-points="15" data-image="link_to_image">$15</div>
+        <div class="purple-50 value" data-question="Does Enrique like ullucos?" data-answer="Does Enrique like ullucos?" data-points="20" data-image="link_to_image">$20</div>
+        <div class="orange-50 value" data-question="This train doesn’t stop at Shin-Yokohama." data-answer="This train doesn’t stop at Shin-Yokohama." data-points="20" data-image="link_to_image">$20</div>
+        <div class="green-50 value" data-question="Does your sister work at the supermarket?" data-answer="Does your sister work at the supermarket?" data-points="20" data-image="link_to_image">$20</div>
+        <div class="red-50 value" data-question="work・at・the supermarket・your sister" data-answer="Does your sister work at the supermarket?" data-points="20" data-image="link_to_image">$20</div>
+        <div class="blue-50 value" data-question="This train doesn’t stop at Shin-Yokohama." data-answer="This train doesn’t stop at Shin-Yokohama." data-points="20" data-image="link_to_image">$20</div>
+    </div>
+
+    <div id="question-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeQuestion()">&times;</span>
+            <img id="question-image" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <p id="question-text"></p>
+            <input type="text" id="user-answer" placeholder="Escribe tu respuesta aquí">
+            <button id="submit-answer" onclick="submitAnswer()">Enviar Respuesta</button>
+            <p id="feedback-text"></p>
+            <button id="next-question" onclick="closeQuestion()">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="score">
+        <p>Puntuación: <span id="current-score">0</span> / <span id="total-points">250</span></p>
+    </div>
+
+    <!-- Botón para volver al juego principal -->
+    <button onclick="returnToMainGame()">Volver al juego principal</button>
+
+    <script src="Jeopardy Present Simple.js"></script> <!-- Asegúrate de vincular tu archivo JavaScript -->
+
+    <!-- Script adicional para comunicación con el juego principal -->
+    <script>
+        function returnToMainGame() {
+            window.parent.postMessage('closeJeopardy', '*');
+        }
+
+        function notifyWin() {
+            window.parent.postMessage('winJeopardy', '*');
+        }
+    </script>
+</body>
+</html>
