@@ -122,7 +122,7 @@ function openJeopardyGame() {
     const jeopardyContainer = document.getElementById('jeopardy-container');
     const jeopardyIframe = document.getElementById('jeopardy-frame');
 
-    jeopardyIframe.src = "jeopardy/jeopardy.html"; // Asegúrate de que esta ruta sea correcta
+    jeopardyIframe.src = "jeopardy.html"; // Asegúrate de que esta ruta sea correcta
     jeopardyContainer.style.display = 'block';
     game.scene.pause();
 }
