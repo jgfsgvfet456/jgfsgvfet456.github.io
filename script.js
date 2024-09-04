@@ -29,12 +29,12 @@ let scoreText;
 
 // Function to preload assets
 function preload() {
-    this.load.image('sky', 'assets/desierto.jpg');
-    this.load.image('ground', 'assets/jp.jpg');
-    this.load.image('door', 'assets/star.png');
-    this.load.image('pinchos', 'assets/pinchos.png');
-    this.load.image('plataforma', 'assets/plataforma.png');
-    this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
+    this.load.image('sky', 'desierto.jpg');
+    this.load.image('ground', 'jp.jpg');
+    this.load.image('door', 'star.png');
+    this.load.image('pinchos', 'pinchos.png');
+    this.load.image('plataforma', 'plataforma.png');
+    this.load.spritesheet('dude', 'dude.png', { frameWidth: 32, frameHeight: 48 });
 }
 
 // Function to create game objects
@@ -207,7 +207,7 @@ function openJeopardyGame() {
     const jeopardyContainer = document.getElementById('jeopardy-container');
     const jeopardyIframe = document.getElementById('jeopardy-frame');
 
-    jeopardyIframe.src = "jeopardy/jeopardy.html"; // Asegúrate de que esta ruta sea correcta
+    jeopardyIframe.src = "jeopardy.html"; // Asegúrate de que esta ruta sea correcta
     jeopardyContainer.style.display = 'block';
     game.scene.pause();
 
